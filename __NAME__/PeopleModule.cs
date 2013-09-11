@@ -30,7 +30,7 @@ namespace __NAME__
                 return this.OK();
             };
 
-            Post["/delete/{id}"] = parameters =>
+            Post["/people/delete/{id}"] = parameters =>
             {
                 db.People().Delete(parameters.id.Value);
 

@@ -6,26 +6,57 @@
     <style type="text/css">
         body
         {
-            text-align: center;
+            width: 500px;
+            margin-left: auto;
+            margin-right: auto;
         }
     </style>
 </head>
 <body>
-    <img src="~/Content/nancy-logo.png" alt="Nancy logo" /><br />
+    <img src="~/Content/nancy-logo.png" alt="Nancy logo" />
+    <br />
     <script src="~/Content/jquery.js"></script>
     <script>
         $(function () {
             $("#create").click(function () {
-                $.post('/people/create', { name: "Amir" }, function () {
-                    alert("yess!");
+                $.post('/people/create', { name: $("#createname").val() }, function () {
+                    alert("done!");
+                });
+            });
+
+            $("#update").click(function () {
+                $.post('/people/update/' + $("#updateid").val(), { name: $("#updatename").val() }, function () {
+                    alert("done!");
+                });
+            });
+
+            $("#show").click(function () {
+                window.location = '/people/' + $("#showid").val();
+            });
+
+            $("#delete").click(function () {
+                $.post('/people/delete/' + $("#deleteid").val(), function () {
+                    alert("done!");
                 });
             });
         });
     </script>
-    This view was rendered using the Nancy Razor view engine
-    <br />
-    <br />
-    <a href="javascript:;" id="create">create</a>
-    <a href="/people/" id="create">list</a>
+    <div>
+        <a href="/people">list</a>
+        <br /><br />
+        <input type="text" placeholder="name" id="createname" /> 
+        <a href="javascript:;" id="create">create</a>
+        <br /><br />
+        <input type="text" placeholder="id" id="updateid" /> 
+        <input type="text" placeholder="new name" id="updatename" /> 
+        <a href="javascript:;" id="update">update</a>
+        <br /><br />
+        <input type="text" placeholder="id" id="showid" />
+        <a href="javascript:;" id="show">show</a>
+        <br /><br />
+        <input type="text" placeholder="id" id="deleteid" />
+        <a href="javascript:;" id="delete">delete</a>
+        <br />
+    </div>
 </body>
 </html>
