@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Nancy Oak</title>
+    <style type="text/css">
+        body
+        {
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <img src="~/Content/nancy-logo.png" alt="Nancy logo" /><br />
+    <script src="~/Content/jquery.js"></script>
+    <script>
+        $(function () {
+            $("#create").click(function () {
+                $.post('/people/create', { name: "Amir" }, function () {
+                    alert("yess!");
+                });
+            });
+        });
+    </script>
+    This view was rendered using the Nancy Razor view engine
+    <br />
+    <br />
+    <a href="javascript:;" id="create">create</a>
+    <a href="/people/" id="create">list</a>
+</body>
+</html>

@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
+  <metadata>
+    <id>cambium</id>
+    <version>1.5.3</version>
+    <authors>Amir Rajan</authors>
+    <owners>Amir Rajan</owners>
+    <licenseUrl>https://github.com/amirrajan/Oak/blob/master/license.txt</licenseUrl>
+    <projectUrl>http://amirrajan.github.com/Oak/</projectUrl>
+    <iconUrl>http://amirrajan.github.io/Oak/oak-nuget.png</iconUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>Dynamic models for .Net applications (data access, associations, validation change tracking). Handles saving and retrieving data (using an altered version of Massive..DynamicRepository).</description>
+    <language>en-US</language>
+    <tags>dynamic activemodel oak</tags>
+    <frameworkAssemblies>
+      <frameworkAssembly assemblyName="System.Configuration" targetFramework="" />
+    </frameworkAssemblies>
+  </metadata>
+</package>
